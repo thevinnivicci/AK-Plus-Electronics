@@ -12,6 +12,7 @@ const links = [
   { name: "OUR PRODUCTS", href: "/products" },
   { name: "LCD", href: "/Lcd" },
   { name: "SCOOTY", href: "/Scooty" },
+  { name: "Mixer", href: "/Mixer" },
 ];
 
 const Navbar = () => {
