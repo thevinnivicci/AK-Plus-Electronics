@@ -51,9 +51,9 @@ export default async function CategoryPage({
                 </Link>
               </div>
 
-              <div className="mt-4 flex justify-between">
+              <div className="mt-4 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-sm text-gray-700">
+                  <h3 className="text-sm text-gray-700 line-clamp-1">
                     <Link href={`/product/${product.slug}`}>
                       {product.name}
                     </Link>
@@ -62,9 +62,11 @@ export default async function CategoryPage({
                     {product.categoryName}
                   </p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
-                  Rs. {product.price}
-                </p>
+                <div>
+                  <p className="text-smtext-gray-900 font-medium">
+                    Rs. {product.price}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

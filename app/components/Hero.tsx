@@ -8,7 +8,7 @@ const getData = async () => {
   const data = await client.fetch(query);
   return data;
 };
-
+export const dynamic = "force-dynamic";
 const Hero = async () => {
   const data = await getData();
   return (

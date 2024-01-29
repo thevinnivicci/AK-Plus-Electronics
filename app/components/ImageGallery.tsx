@@ -15,13 +15,16 @@ const ImageGallery = ({ images }: iAppProps) => {
     <div className="grid gap-4 lg:grid-cols-5">
       <div className="order-last flex gap-4 lg:order-none lg:flex-col">
         {images.map((image: any, idx: any) => (
-          <div key={idx} className="overflow-hidden rounded-lg bg-gray-100">
+          <div
+            key={idx}
+            className="overflow-hidden w-20 sm:h-20 aspect-square rounded-lg bg-gray-100"
+          >
             <Image
               src={urlFor(image).url()}
               alt="product image"
-              width={1000}
-              height={1000}
-              className="w-full h-full object-cover object-center cursor-pointer"
+              width={500}
+              height={500}
+              className="w-full h-full object-contain object-center cursor-pointer"
               onClick={() => handleSmallImageClick(image)}
             />
           </div>

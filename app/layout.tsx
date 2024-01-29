@@ -4,6 +4,7 @@ import "./globals.css";
 import CartProvider from "./components/Providers";
 import Navbar from "./components/Navbar";
 import ShoppingCartModal from "./components/ShoppingCartModal";
+import Footer from "./components/Footer";
 // import ResNavbar from "./components/ResNavbar";
 
 const inter = Open_Sans({ subsets: ["latin"] });
@@ -26,6 +27,7 @@ export default function RootLayout({
           {/* <Navbar /> */}
           <ShoppingCartModal />
           {children}
+          <Footer />
         </CartProvider>
       </body>
     </html>

@@ -17,6 +17,8 @@ async function getData() {
   const data = await client.fetch(query);
   return data;
 }
+export const dynamic = "force-dynamic";
+
 export default async function Newest() {
   const data: simplifiedProduct[] = await getData();
   return (
@@ -39,7 +41,7 @@ export default async function Newest() {
         {data.map((product) => (
           <div
             key={product._id}
-            className="group relative border hover:shadow-xl border-gray-400 p-2 rounded-sm"
+            className="group relative  hover:shadow-xl p-2 rounded-sm"
           >
             <div className="aspect-square w-full overflow-hidden bg-gray-200 group-hover:opacity-75 lg:80">
               <Link href={`/product/${product.slug}`}>
@@ -52,18 +54,20 @@ export default async function Newest() {
                 />
               </Link>
             </div>
-            <div className="mt-4 flex border-t border-gray-400 pt-3 justify-between">
+            <div className="mt-4 flex flex-col pt-3 justify-between">
               <div className="">
-                <h3 className="text-sm text-gray-700">
+                <h3 className="text-md text-gray-700">
                   <Link href={`/product/${product.slug}`}>{product.name}</Link>
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
                   {product.categoryName}
                 </p>
               </div>
-              <p className="text-sm lg:text-lg text-gray-900 font-semibold">
-                Rs. {product.price}
-              </p>
+              <div>
+                <p className="text-sm lg:text-lg text-gray-900 font-semibold">
+                  Rs. {product.price}
+                </p>
+              </div>
             </div>
           </div>
         ))}
