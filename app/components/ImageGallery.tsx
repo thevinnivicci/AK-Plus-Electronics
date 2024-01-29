@@ -19,21 +19,21 @@ const ImageGallery = ({ images }: iAppProps) => {
             <Image
               src={urlFor(image).url()}
               alt="product image"
-              width={200}
-              height={200}
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover object-center cursor-pointer"
               onClick={() => handleSmallImageClick(image)}
             />
           </div>
         ))}
       </div>
-      <div className=" relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4">
+      <div className="aspect-square lg:mt-12 relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4">
         <Image
           src={urlFor(bigImage).url()}
           alt="big Image"
-          width={500}
-          height={500}
-          className="w-full h-full object-cover object-center cursor-pointer"
+          width={1000}
+          height={1000}
+          className="w-full h-full object-contain object-center cursor-pointer"
         />
         <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 py-1.5 text-sm uppercase tracking-wider text-white">
           Sale

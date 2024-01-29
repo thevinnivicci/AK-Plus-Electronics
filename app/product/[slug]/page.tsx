@@ -35,9 +35,8 @@ export default async function ProductPge({
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           <ImageGallery images={data.images} />
-
           <div className="md:py-8">
             <div className="mb-2 md:mb-3">
               <span className="mb-0.5 inline-block text-gray-500">
@@ -49,7 +48,7 @@ export default async function ProductPge({
             </div>
 
             <div className="mb-6 flex items-center gap-3 md:mb-10">
-              <Button className="rounded-full gap-x-2">
+              <Button variant={"outline"} className="rounded-full gap-x-2">
                 <span className="text-sm">4.2</span>
                 <Star className="h-5 w-5" />
               </Button>
@@ -62,10 +61,10 @@ export default async function ProductPge({
             <div className="mb-4">
               <div className="flex items-end gap-2">
                 <span className="text-xl font-bold text-gray-800 md:text-2xl">
-                  ${data.price}
+                  Rs. {data.price}
                 </span>
                 <span className="mb-0.5 text-red-500 line-through">
-                  ${data.price + 30}
+                  Rs.{data.price + 30}
                 </span>
               </div>
 
@@ -99,12 +98,15 @@ export default async function ProductPge({
                 price_id={data.price_id}
               />
             </div>
-
-            <p className="mt-12 text-base text-gray-500 tracking-wide">
+            <p className="mt-5 line text-base text-gray-500 tracking-wide">
               {data.description}
             </p>
           </div>
         </div>
+        {/* <h1 className="text-4xl">Details about products</h1>
+        <p className=" mt-5 line text-base text-gray-500 tracking-wide">
+          {data.description}
+        </p> */}
       </div>
     </div>
   );

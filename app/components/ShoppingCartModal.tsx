@@ -38,7 +38,6 @@ export default function ShoppingCartModal() {
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
         </SheetHeader>
-
         <div className="h-full flex flex-col justify-between">
           <div className="mt-8 flex-1 overflow-y-auto">
             <ul className="-my-6 divide-y divide-gray-200">
@@ -54,6 +53,7 @@ export default function ShoppingCartModal() {
                           alt="Product image"
                           width={100}
                           height={100}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="ml-4 flex flex-1 flex-col">

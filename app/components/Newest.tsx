@@ -21,31 +21,39 @@ export default async function Newest() {
   const data: simplifiedProduct[] = await getData();
   return (
     <div className="w-full ">
-      <div className=" max-w-7xl flex justify-between mx-auto items-center">
+      <div className="max-w-7xl px-5 flex justify-between mx-auto items-center">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
           Our Latest Product
         </h2>
-        <Link className="text-primary flex items-center gap-x-1" href="/all">
+        <Link
+          className="text-primary flex items-center gap-x-1"
+          href="/products"
+        >
           See All{" "}
           <span>
             <ArrowRight />
           </span>
         </Link>
       </div>
-      <div className=" max-w-7xl mx-auto p-2 grid grid-cols-1 gap-x-6 gap-y-18 sm:grid-cols-2 lg:grid-cols-4 ">
+      <div className="lg:mt-5  max-w-7xl mx-auto p-5 gap-5 grid grid-cols-1 gap-x-6 gap-y-18 sm:grid-cols-2 lg:grid-cols-4 ">
         {data.map((product) => (
-          <div key={product._id} className="group relative ">
-            <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 p-5 lg:80">
-              <Image
-                src={product.imageUrl}
-                alt="product Image"
-                className="w-full h-full object-cover object-center lg:h-full lg:w-full"
-                width={300}
-                height={300}
-              />
+          <div
+            key={product._id}
+            className="group relative border hover:shadow-xl border-gray-400 p-2 rounded-sm"
+          >
+            <div className="aspect-square w-full overflow-hidden bg-gray-200 group-hover:opacity-75 lg:80">
+              <Link href={`/product/${product.slug}`}>
+                <Image
+                  src={product.imageUrl}
+                  alt="product Image"
+                  className="w-full h-full object-contain  object-center lg:h-full lg:w-full"
+                  width={1000}
+                  height={1000}
+                />
+              </Link>
             </div>
-            <div className="mt-4 flex justify-between">
-              <div>
+            <div className="mt-4 flex border-t border-gray-400 pt-3 justify-between">
+              <div className="">
                 <h3 className="text-sm text-gray-700">
                   <Link href={`/product/${product.slug}`}>{product.name}</Link>
                 </h3>
@@ -53,7 +61,7 @@ export default async function Newest() {
                   {product.categoryName}
                 </p>
               </div>
-              <p className="text-sm text-gray-900 font-medium">
+              <p className="text-sm lg:text-lg text-gray-900 font-semibold">
                 Rs. {product.price}
               </p>
             </div>

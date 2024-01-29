@@ -27,11 +27,12 @@ export default function CheckOutNow({
   }
   return (
     <Button
+      variant={"outline"}
       onClick={() => {
         buyNow(product.price_id);
       }}
     >
-      Add To Cart
+      Check Out Now
     </Button>
   );
 }

@@ -1,41 +1,58 @@
 "use client";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ShoppingBag } from "lucide-react";
+import { AlignRight, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useShoppingCart } from "use-shopping-cart";
 
 const links = [
-  { name: "Home", href: "/" },
-  { name: "Lcd", href: "/Lcd" },
-  { name: "Scooty", href: "/Scooty" },
+  { name: "HOME", href: "/" },
+  { name: "OUR PRODUCTS", href: "/products" },
+  { name: "LCD", href: "/Lcd" },
+  { name: "SCOOTY", href: "/Scooty" },
 ];
 
 const Navbar = () => {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="mb-8 border-b">
+    <header className="mb-2 border-b sm:p-2 md:p-0 lg:p-0">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
-        <Link href="/">
-          <h1 className="text-2xl md:text-4xl font-bold">
-            AK <span className="text-primary">Plus</span>
-          </h1>
-        </Link>
-        <nav className="hidden gap-12 lg:flex 2xl:ml-16 ">
+        <div className="flex items-center gap-0.5 mb-2 p-2 sm:mb-0">
+          <Link href="/" className="flex items-center gap-0.5">
+            <Image
+              src="/logo.jpeg"
+              alt="logo"
+              width={500}
+              height={500}
+              className="md:w-14 md:h-14 w-10 h-10 rounded-lg"
+            />
+          </Link>
+        </div>
+
+        {/* Navigation links for larger screens */}
+        <nav className="hidden sm:flex flex-wrap justify-center gap-3 sm:justify-end lg:gap-12 2xl:ml-16">
           {links.map((link, idx) => (
-            <div key={idx}>
+            <div key={idx} className="mb-2 sm:mb-0">
               {pathname === link.href ? (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-primary"
+                  className=" text-base font-semibold text-primary"
                 >
                   {link.name}
                 </Link>
               ) : (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-gray-600 transion duration-100 hover:text-primary"
+                  className="text-base font-semibold text-gray-600 transition duration-100 hover:text-primary"
                 >
                   {link.name}
                 </Link>
@@ -43,7 +60,24 @@ const Navbar = () => {
             </div>
           ))}
         </nav>
-        <div className="flex divide-x border-r sm:border-l">
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden z-10 absolute top-16 right-4 bg-white p-4 rounded-md shadow-md">
+            {links.map((link, idx) => (
+              <div key={idx} className="mb-2">
+                <Link
+                  href={link.href}
+                  onClick={toggleMenu}
+                  className="text-base font-semibold text-gray-600 transition duration-100 hover:text-primary"
+                >
+                  {link.name}
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
+        {/* Cart button */}
+        <div className="flex items-center gap-2 divide-x border-r sm:border-l">
           <Button
             variant={"outline"}
             onClick={() => handleCartClick()}
@@ -54,6 +88,16 @@ const Navbar = () => {
               Cart
             </span>
           </Button>
+          {/* Hamburger menu icon for mobile */}
+          <div className="sm:hidden">
+            <Button
+              variant={"default"}
+              onClick={toggleMenu}
+              className="h-12 w-12 rounded-none"
+            >
+              <AlignRight />
+            </Button>
+          </div>
         </div>
       </div>
     </header>
