@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function getData() {
-  const query = `*[_type == "product"] {
+  const query = `*[_type == "product"] | order(_createdAt desc) {
     _id,
     "imageUrl": images[0].asset->url,
     price,

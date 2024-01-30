@@ -37,7 +37,7 @@ const Hero = async () => {
       <div className="w-full h-full aspect-sqaure md:h-full p-5 lg:p-20">
         <Image
           src={urlFor(data.image1).url()}
-          alt="hero"
+          alt="hero image"
           priority
           width={1000}
           height={1000}

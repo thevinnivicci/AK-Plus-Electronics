@@ -18,7 +18,7 @@ export default function Footer() {
         </p>
 
         <div className="flex -mx-2">
-          <Link href="https://www.instagram.com/akplus49/">
+          <Link target="_blank" href="https://www.instagram.com/akplus49/">
             <InstagramIcon />
           </Link>
         </div>
