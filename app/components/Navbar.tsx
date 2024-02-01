@@ -10,9 +10,7 @@ import { useShoppingCart } from "use-shopping-cart";
 const links = [
   { name: "HOME", href: "/" },
   { name: "OUR PRODUCTS", href: "/products" },
-  { name: "LCD", href: "/Lcd" },
-  { name: "SCOOTY", href: "/Scooty" },
-  { name: "MIXER", href: "/Mixer" },
+  { name: "ABOUT US", href: "/about" },
 ];
 
 const Navbar = () => {
@@ -25,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="mb-2 border-b sm:p-2 md:p-0 lg:p-0">
+    <header className=" bg-white w-full z-10  border-b sm:p-2 md:p-0 lg:p-0">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <div className="flex items-center gap-0.5 mb-2 p-2 sm:mb-0">
           <Link href="/" className="flex items-center gap-0.5">

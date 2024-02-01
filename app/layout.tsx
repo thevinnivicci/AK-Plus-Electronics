@@ -5,6 +5,7 @@ import CartProvider from "./components/Providers";
 import Navbar from "./components/Navbar";
 import ShoppingCartModal from "./components/ShoppingCartModal";
 import Footer from "./components/Footer";
+// import Header from "./components/Header";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CartProvider>
+          {/* <Header /> */}
           <Navbar />
           {/* <Navbar /> */}
           <ShoppingCartModal />
