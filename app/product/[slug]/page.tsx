@@ -64,7 +64,7 @@ export default async function ProductPge({
                   Rs. {data.price}
                 </span>
                 <span className="mb-0.5 text-red-500 line-through">
-                  Rs.{data.price + 30}
+                  Rs.{data.price + 130}
                 </span>
               </div>
 

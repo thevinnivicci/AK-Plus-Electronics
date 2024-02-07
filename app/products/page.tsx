@@ -21,6 +21,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ProductsPage() {
   const data: product[] = await getData();
+  console.log(data);
   return (
     <div className="">
       <h1 className="text-center text-5xl">

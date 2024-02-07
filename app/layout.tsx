@@ -5,7 +5,6 @@ import CartProvider from "./components/Providers";
 import Navbar from "./components/Navbar";
 import ShoppingCartModal from "./components/ShoppingCartModal";
 import Footer from "./components/Footer";
-// import Header from "./components/Header";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -14,6 +13,8 @@ export const metadata: Metadata = {
   description:
     "Explore a world of cutting-edge electronics and home appliances at AK Plus Electronics, your premier destination on Rohta Road, Meerut. Discover top-quality gadgets, smart home solutions, and essential appliances to enhance your lifestyle. Visit us for the latest in technology and unbeatable deals. Your trusted source for innovation in Meerut.",
   keywords: [
+    "ak plus electronic",
+    "a k plus electronic",
     "Electronics Meerut",
     "Home Appliances Meerut",
     "Cutting-edge Gadgets",
@@ -36,9 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CartProvider>
-          {/* <Header /> */}
           <Navbar />
-          {/* <Navbar /> */}
           <ShoppingCartModal />
           {children}
           <Footer />
