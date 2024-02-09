@@ -4,6 +4,7 @@ export interface simplifiedProduct {
   price: number;
   slug: string;
   categoryName: string;
+  categorySlug: string;
   name: string;
 }
 export interface fullProduct {
@@ -12,6 +13,7 @@ export interface fullProduct {
   price: number;
   slug: string;
   categoryName: string;
+  categorySlug: string;
   name: string;
   description: string;
   price_id: string;
@@ -22,5 +24,6 @@ export interface product {
   price: number;
   slug: string;
   categoryName: string;
+  categorySlug: string;
   name: string;
 }

@@ -4,6 +4,8 @@ import { client } from "../lib/sanity";
 import { product } from "../interface";
 import Link from "next/link";
 import Image from "next/image";
+import Category from "../components/Category";
+import SearchBar from "../components/SearchBar";
 
 const PAGE_SIZE = 12; // Number of products per page
 
@@ -35,11 +37,13 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className="">
-      <h1 className="text-center text-5xl">
+    <div className="w-full flex flex-col overflow-hidden items-center justify-center">
+      {/* <SearchBar /> */}
+      <Category />
+      {/* <h1 className="text-center text-5xl">
         Our <span className="text-primary"> Products</span>
-      </h1>
-      <div className="mt-5 max-w-7xl mx-auto p-5 grid grid-cols-1 gap-x-6 gap-y-18 lg:gap-y-5 sm:grid-cols-2 lg:grid-cols-4 ">
+      </h1> */}
+      <div className="mt-2 max-w-7xl mx-auto p-5 grid grid-cols-1 gap-x-6 gap-y-18 lg:gap-y-5 sm:grid-cols-2 lg:grid-cols-4 ">
         {loading ? (
           <p>Loading...</p>
         ) : (
