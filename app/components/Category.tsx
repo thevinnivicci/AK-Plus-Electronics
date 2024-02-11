@@ -35,7 +35,7 @@ const Category = () => {
           {loading ? (
             <p className="animate-pulse text-5xl">{}</p>
           ) : (
-            category.map((categoryObject, id) => (
+            category.map((categoryObject: any, id: number) => (
               <Link key={id} href={`/${categoryObject.slug}`}>
                 <CarouselItem>
                   <Badge
