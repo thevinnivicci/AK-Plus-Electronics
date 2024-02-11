@@ -39,7 +39,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   }, [params.slug]);
 
   if (!productData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-full mt-5 animate-pulse text-center">
+        <div className="relative inline-flex">
+          <div className="w-8 h-8 bg-primary rounded-full"></div>
+          <div className="w-8 h-8 bg-primary rounded-full absolute top-0 left-0 animate-ping"></div>
+          <div className="w-8 h-8 bg-primary rounded-full absolute top-0 left-0 animate-pulse"></div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -113,10 +121,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </p>
           </div>
         </div>
-        {/* <h1 className="text-4xl">Details about products</h1>
-        <p className=" mt-5 line text-base text-gray-500 tracking-wide">
-          {productData.description}
-        </p> */}
       </div>
     </div>
   );

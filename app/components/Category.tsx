@@ -33,7 +33,7 @@ const Category = () => {
       <Carousel className="overflow-hidden">
         <CarouselContent>
           {loading ? (
-            <p className="animate-pulse text-5xl">...</p>
+            <p className="animate-pulse text-5xl">{}</p>
           ) : (
             category.map((categoryObject, id) => (
               <Link key={id} href={`/${categoryObject.slug}`}>

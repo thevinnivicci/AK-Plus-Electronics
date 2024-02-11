@@ -43,9 +43,9 @@ export default function ProductsPage() {
       {/* <h1 className="text-center text-5xl">
         Our <span className="text-primary"> Products</span>
       </h1> */}
-      <div className="mt-2 max-w-7xl mx-auto p-5 grid grid-cols-1 gap-x-6 gap-y-18 lg:gap-y-5 sm:grid-cols-2 lg:grid-cols-4 ">
+      <div className="mt-2 max-w-7xl place-content-center mx-auto p-5 grid grid-cols-1 gap-x-6 gap-y-18 lg:gap-y-5 sm:grid-cols-2 lg:grid-cols-4 ">
         {loading ? (
-          <p>Loading...</p>
+          <p>{}</p>
         ) : (
           products.map((product: any) => (
             <div key={product._id} className="group relative">
