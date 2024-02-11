@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import { useState, useEffect } from "react";
 
-export async function getData(Slug: string) {
+export async function getData(Slug: string): Promise<fullProduct> {
   const query = `*[_type == "product" && slug.current == "${Slug}"][0] {
     _id,
     images,
