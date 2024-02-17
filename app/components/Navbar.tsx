@@ -61,13 +61,13 @@ const Navbar = () => {
         </nav>
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden z-10 absolute top-16 right-4 bg-white p-4 rounded-md shadow-md">
+          <div className="md:hidden text-center px-10 z-10 absolute top-16 right-4 bg-white  rounded-md shadow-md">
             {links.map((link, idx) => (
-              <div key={idx} className="mb-2">
+              <div key={idx} className="mb-5">
                 <Link
                   href={link.href}
                   onClick={toggleMenu}
-                  className="text-base font-semibold text-gray-600 transition duration-100 hover:text-primary"
+                  className="text-base hover:border-b border-primary transition-all font-semibold text-gray-600 hover:text-primary"
                 >
                   {link.name}
                 </Link>

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { InstagramIcon } from "lucide-react";
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,7 +19,43 @@ export default function Footer() {
 
         <div className="flex -mx-2">
           <Link target="_blank" href="https://www.instagram.com/akplus49/">
-            <InstagramIcon />
+            <Image
+              src={
+                "https://cdn.iconscout.com/icon/free/png-256/free-instagram-1868978-1583142.png?f=webp&w=128"
+              }
+              alt="instagram logo"
+              width={30}
+              height={30}
+            />
+          </Link>
+          <Link
+            target="_blank"
+            className="ml-2"
+            href="https://www.youtube.com/@AkPlus199"
+          >
+            <Image
+              src={
+                "https://cdn.iconscout.com/icon/free/png-256/free-youtube-82-189778.png?f=webp&w=128"
+              }
+              alt="youtube logo"
+              width={30}
+              height={30}
+            />
+          </Link>
+          <Link
+            className="ml-2"
+            href={
+              "https://www.facebook.com/profile.php?id=61554655914296&sfnsn=wiwspwa&mibextid=2JQ9oc"
+            }
+          >
+            <Image
+              src={
+                "https://cdn.iconscout.com/icon/free/png-512/free-facebook-262-721949.png?f=webp&w=256"
+              }
+              alt="facebook logo"
+              width={30}
+              height={30}
+            />
           </Link>
         </div>
       </div>

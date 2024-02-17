@@ -5,6 +5,8 @@ import { fullProduct } from "@/app/interface";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -79,24 +81,19 @@ export default async function ProductPge({
             </div>
 
             <div className="flex gap-2.5">
-              <AddToBag
-                currency="INR"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              />
-              <CheckOutNow
-                currency="INR"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              />
+              <Link target="_blank" href={"https://wa.me/918077906395"}>
+                <Button variant={"default"} className="p-6">
+                  <Image
+                    src={
+                      "https://cdn.iconscout.com/icon/free/png-256/free-whatsapp-42-189793.png?f=webp&w=128"
+                    }
+                    alt="whatsapp logo"
+                    width={30}
+                    height={30}
+                  />
+                  <span className="ml-2">Get Enquiry</span>
+                </Button>
+              </Link>
             </div>
             <p className="mt-5 line text-base text-gray-500 tracking-wide">
               {data.description}

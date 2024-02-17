@@ -9,14 +9,17 @@ const about = () => {
           <div className="bg-blue-600 p-8 md:p-12 lg:px-16 lg:py-24">
             <div className="mx-auto max-w-xl text-center">
               <h2 className="text-2xl font-bold text-white md:text-3xl">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit
+                {"Empowering Homes with Smart Solutions"}
               </h2>
 
               <p className="hidden text-white/90 sm:mt-4 sm:block">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                egestas tempus tellus etiam sed. Quam a scelerisque amet
-                ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat
-                quisque ut interdum tincidunt duis.
+                Welcome to AK Plus Electronics, your premier destination for
+                cutting-edge electronic home appliances. At AK Plus, we
+                understand the importance of innovation and quality in enhancing
+                your everyday living experience. As a leading brand in the
+                industry, we are dedicated to providing you with top-of-the-line
+                products that seamlessly blend advanced technology with stylish
+                design.
               </p>
 
               <div className="mt-4 md:mt-8">
